@@ -1,0 +1,6 @@
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: #1c2022;
+  color: white;
+}
