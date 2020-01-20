@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BookGrid from "../BooksGrid/BooksGrid";
 import "./HomePage.css";
 import MainBanner from "../MainBanner/MainBanner";
+import Alert from "react-bootstrap/Alert";
 
 class HomePage extends Component {
   constructor(props) {
@@ -31,8 +32,7 @@ class HomePage extends Component {
         throw new Error("Something went wrong while fetching the data");
       }
     } catch (error) {
-      this.setState({ error, isLoading: false });
-      console.log("error!");
+      this.setState({ error: true, isLoading: false });
       console.error(error);
     }
   }
@@ -52,7 +52,13 @@ class HomePage extends Component {
             <h2>Featured Books</h2>
             <br />
           </div>
-          <BookGrid data={this.state.books} />
+          {this.state.error ? (
+            <Alert variant="danger">
+              Error: Unable to fetch Book data from API.
+            </Alert>
+          ) : null}
+
+          <BookGrid data={this.state.books} loading={this.state.loading} />
           <br />
         </div>
       </div>
