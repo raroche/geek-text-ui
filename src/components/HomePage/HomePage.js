@@ -18,8 +18,9 @@ class HomePage extends Component {
     this.fetchFeaturedBooks = this.fetchFeaturedBooks.bind(this);
   }
 
-  // Fetch a book from the API
+  // Fetch a book from the API.
   async fetchFeaturedBooks() {
+    this.setState({ ...this.state, loading: true });
     try {
       const response = await fetch(
         "https://geek-text-team9.herokuapp.com/api/"
@@ -27,7 +28,8 @@ class HomePage extends Component {
 
       if (response.ok) {
         const data = await response.json();
-        this.setState({ books: data });
+        this.setState({ ...this.state, books: data });
+        this.setState({ ...this.state, isLoading: false });
       } else {
         throw new Error("Something went wrong while fetching the data");
       }
@@ -38,9 +40,9 @@ class HomePage extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ loading: true });
+    this.setState({ ...this.state, loading: true });
     this.fetchFeaturedBooks();
-    this.setState({ loading: false });
+    this.setState({ ...this.state });
   }
 
   render() {
