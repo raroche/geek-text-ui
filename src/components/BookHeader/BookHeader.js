@@ -2,6 +2,7 @@ import React from 'react';
 import './BookHeader.css';
 import GenreButton from './GenreButton';
 import SortButton from './SortButton';
+import RatingButton from './RatingButton';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +11,7 @@ const BookHeader = props => (
         <div className="content"> 
             <GenreButton/> 
             <Link to="/books/top">Top Sellers</Link>
-            <Link to="/books/rating">High Rated</Link>
+            <RatingButton/>
             <SortButton/>
         </div>
         
@@ -22,3 +23,5 @@ const BookHeader = props => (
 
 
 export default BookHeader;
+
+//<Link to="/books/rating">Rating</Link>
