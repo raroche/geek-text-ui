@@ -92,16 +92,16 @@ class App extends Component {
         <Route exact path="/books" component={BookPage} />
         <Route path="/cart" component={Cart} />
         <Route path="/books/top" component={TopSeller} />
-        <Route path="/books/genre/Programming" component={Programming} />
-        <Route path="/books/genre/Robotics" component={Robotics} />
-        <Route path="/books/genre/Network" component={Network} />
-        <Route path="/books/genre/Artificial_Intelligence" component={AI} />
-        <Route path="/books/rating/0" component={Rating0} />
-        <Route path="/books/rating/1" component={Rating1} />
-        <Route path="/books/rating/2" component={Rating2} />
-        <Route path="/books/rating/3" component={Rating3} />
-        <Route path="/books/rating/4" component={Rating4} />
-        <Route path="/books/rating/5" component={Rating5} />
+        <Route path="/books/Programming" component={Programming} />
+        <Route path="/books/Robotics" component={Robotics} />
+        <Route path="/books/Network" component={Network} />
+        <Route path="/books/Artificial_Intelligence" component={AI} />
+        <Route path="/books/rating0" component={Rating0} />
+        <Route path="/books/rating1" component={Rating1} />
+        <Route path="/books/rating2" component={Rating2} />
+        <Route path="/books/rating3" component={Rating3} />
+        <Route path="/books/rating4" component={Rating4} />
+        <Route path="/books/rating5" component={Rating5} />
         <Route
           path="/wishlist"
           render={props => (
