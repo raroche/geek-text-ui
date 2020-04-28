@@ -1,0 +1,18 @@
+.RatingButton {
+    background-color: transparent;
+    color: white;
+    padding: 0px 0px 0px 0px;
+    font-size: 20px;
+    border: none;
+    position: relative;
+    outline: none;
+}
+
+.RatingButton:active {
+    outline: none;
+    border: none;
+}
+  
+.RatingButton:focus {
+    outline: none;
+}

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import BookGrid from "../BooksGrid/BooksGrid";
 import "./HomePage.css";
 import MainBanner from "../MainBanner/MainBanner";
-import Alert from "react-bootstrap/Alert";
 
 class HomePage extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class HomePage extends Component {
 
     this.state = {
       books: [],
-      loading: true,
+      loading: false,
       error: null
     };
 
@@ -18,7 +17,7 @@ class HomePage extends Component {
     this.fetchFeaturedBooks = this.fetchFeaturedBooks.bind(this);
   }
 
-  // Fetch a book from the API,
+  // Fetch a book from the API
   async fetchFeaturedBooks() {
     try {
       const response = await fetch(
@@ -27,20 +26,21 @@ class HomePage extends Component {
 
       if (response.ok) {
         const data = await response.json();
-        this.setState({ ...this.state, books: data });
+        this.setState({ books: data });
       } else {
         throw new Error("Something went wrong while fetching the data");
       }
     } catch (error) {
-      this.setState({ error: true, isLoading: false });
+      this.setState({ error, isLoading: false });
+      console.log("error!");
       console.error(error);
     }
-    this.setState({ loading: false });
   }
 
   async componentDidMount() {
     this.setState({ loading: true });
     this.fetchFeaturedBooks();
+    this.setState({ loading: false });
   }
 
   render() {
@@ -52,13 +52,7 @@ class HomePage extends Component {
             <h2>Featured Books</h2>
             <br />
           </div>
-          {this.state.error ? (
-            <Alert variant="danger">
-              Error: Unable to fetch Book data from API.
-            </Alert>
-          ) : null}
-
-          <BookGrid data={this.state.books} loading={this.state.loading} />
+          <BookGrid data={this.state.books} />
           <br />
         </div>
       </div>

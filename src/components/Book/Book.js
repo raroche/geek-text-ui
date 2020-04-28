@@ -22,7 +22,8 @@ export default function Book(props) {
         </div>
           <p > 
             <div class = "stars"> <ReviewStars totalReviews={totalReviews} avgRating={avgRating} /> </div>
-            Price: ${props.book.price} 
+            Price: ${props.book.price} <br/>
+            Author: {props.book.author}
           </p>
         
         
@@ -42,8 +43,8 @@ function calculateAvgRating(reviews, totalReviews) {
 
 function shortTitle (title) {
   let lastSpace = 0;
-  if (title.length > 42) {                    //44 is about the size for two lines, I dont want it to go over 2 lines for formatting reasons
-    title = title.slice(0,42)
+  if (title.length > 47) {                    //44 is about the size for two lines, I dont want it to go over 2 lines for formatting reasons
+    title = title.slice(0,47)
     lastSpace = title.lastIndexOf(' ');
     title = title.slice(0, lastSpace) + "...";
   }

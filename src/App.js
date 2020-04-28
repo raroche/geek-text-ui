@@ -19,6 +19,12 @@ import Programming from "./components/Genres/Programming";
 import Robotics from "./components/Genres/Robotics";
 import Network from "./components/Genres/Network";
 import AI from "./components/Genres/AI";
+import Rating0 from "./components/Rating/Rating0";
+import Rating1 from "./components/Rating/Rating1";
+import Rating2 from "./components/Rating/Rating2";
+import Rating3 from "./components/Rating/Rating3";
+import Rating4 from "./components/Rating/Rating4";
+import Rating5 from "./components/Rating/Rating5";
 
 class App extends Component {
   constructor() {
@@ -86,11 +92,16 @@ class App extends Component {
         <Route exact path="/books" component={BookPage} />
         <Route path="/cart" component={Cart} />
         <Route path="/books/top" component={TopSeller} />
-        <Route path="/books/rating" component={HighRating} />
         <Route path="/books/genre/Programming" component={Programming} />
         <Route path="/books/genre/Robotics" component={Robotics} />
         <Route path="/books/genre/Network" component={Network} />
         <Route path="/books/genre/Artificial_Intelligence" component={AI} />
+        <Route path="/books/rating/0" component={Rating0} />
+        <Route path="/books/rating/1" component={Rating1} />
+        <Route path="/books/rating/2" component={Rating2} />
+        <Route path="/books/rating/3" component={Rating3} />
+        <Route path="/books/rating/4" component={Rating4} />
+        <Route path="/books/rating/5" component={Rating5} />
         <Route
           path="/wishlist"
           render={props => (
