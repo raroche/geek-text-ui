@@ -17,7 +17,7 @@ class Rating2 extends Component {
   }
   async fetchBooks() {
     try {
-      const response = await fetch("http://localhost:8090/api/books/rating2/");
+      const response = await fetch("https://geek-text-team9.herokuapp.com/api/books/rating2/");
 
       if (response.ok) {
         const data = await response.json();
