@@ -8,23 +8,12 @@ import BookDetails from "./components/BookDetails/BookDetails";
 import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
 import Header from "./components/header/Header";
 import Footer from "./components/Footer/Footer";
-import TopSeller from "./components/TopSeller/TopSeller";
 import Cart from "./components/Cart/Cart";
 import WishList from "./components/WishList/WishList";
-import HighRating from "./components/HighRating/HighRating";
 import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 import MyAccount from "./components/MyAccount/MyAccount";
-import Programming from "./components/Genres/Programming";
-import Robotics from "./components/Genres/Robotics";
-import Network from "./components/Genres/Network";
-import AI from "./components/Genres/AI";
-import Rating0 from "./components/Rating/Rating0";
-import Rating1 from "./components/Rating/Rating1";
-import Rating2 from "./components/Rating/Rating2";
-import Rating3 from "./components/Rating/Rating3";
-import Rating4 from "./components/Rating/Rating4";
-import Rating5 from "./components/Rating/Rating5";
+
 
 class App extends Component {
   constructor() {
@@ -89,19 +78,19 @@ class App extends Component {
         <Route path="/login" render={props => <LoginRegister {...props} handleLoginStatus={this.handleLoginStatus} /> } />
         <Route path="/myaccount" render={props => <MyAccount {...props} currentUser={this.state.userId} loggedInStatus={this.state.loggedInStatus} /> } />
         <Route path="/bookgrid" component={BooksGrid} />
-        <Route exact path="/books" component={BookPage} />
         <Route path="/cart" component={Cart} />
-        <Route path="/books/top" component={TopSeller} />
-        <Route path="/books/Programming" component={Programming} />
-        <Route path="/books/Robotics" component={Robotics} />
-        <Route path="/books/Network" component={Network} />
-        <Route path="/books/Artificial_Intelligence" component={AI} />
-        <Route path="/books/rating0" component={Rating0} />
-        <Route path="/books/rating1" component={Rating1} />
-        <Route path="/books/rating2" component={Rating2} />
-        <Route path="/books/rating3" component={Rating3} />
-        <Route path="/books/rating4" component={Rating4} />
-        <Route path="/books/rating5" component={Rating5} />
+        <Route exact path="/books" render={props => <BookPage {...props} address= ''  header='All Books' /> } />
+        <Route path="/books/top" render={props => <BookPage {...props} address= 'top/'  header='Top Sellers' /> } />  
+        <Route path="/books/Programming" render={props => <BookPage {...props} address= 'programming/'  header='Programming' /> } />
+        <Route path="/books/Robotics" render={props => <BookPage {...props} address= 'robotics/'  header='Robotics' /> } />
+        <Route path="/books/Network" render={props => <BookPage {...props} address= 'network/'  header='Network' /> } />
+        <Route path="/books/Artificial_Intelligence" render={props => <BookPage {...props} address= 'AI/'  header='Artificial Intelligence' /> } />
+        <Route path="/books/rating0" render={props => <BookPage {...props} address= 'rating0/'  header='Rating 0+' /> } />
+        <Route path="/books/rating1" render={props => <BookPage {...props} address= 'rating1/'  header='Rating 1+' /> } />
+        <Route path="/books/rating2" render={props => <BookPage {...props} address= 'rating2/'  header='Rating 2+' /> } />
+        <Route path="/books/rating3" render={props => <BookPage {...props} address= 'rating3/'  header='Rating 3+' /> } />
+        <Route path="/books/rating4" render={props => <BookPage {...props} address= 'rating4/'  header='Rating 4+' /> } />
+        <Route path="/books/rating5" render={props => <BookPage {...props} address= 'rating5/'  header='Rating 5' /> } />
         <Route
           path="/wishlist"
           render={props => (

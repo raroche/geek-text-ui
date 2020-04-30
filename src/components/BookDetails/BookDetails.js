@@ -30,7 +30,7 @@ export default class BookDetails extends Component {
       } = this.props;
 
       const response = await fetch(
-        `https://geek-text-team9.herokuapp.com/api/books/${params.bookId}`
+        `https://geek-text-team9.herokuapp.com/api/books/details/${params.bookId}`
       );
       const responseAuthors = await fetch(
         `https://geek-text-team9.herokuapp.com/api/author/book/${params.bookId}`

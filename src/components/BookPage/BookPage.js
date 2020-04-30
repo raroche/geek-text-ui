@@ -5,7 +5,7 @@ import BookHeader from "../BookHeader/BookHeader";
 
 class BookPage extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       books: [],
@@ -14,12 +14,21 @@ class BookPage extends Component {
     };
 
     this.fetchBooks = this.fetchBooks.bind(this);
+
+    
+    
   }
   async fetchBooks() {
+    var address = this.props.address;
+    
+    console.log({address});
     try {
+
       const response = await fetch(
-        "https://geek-text-team9.herokuapp.com/api/books/"
+        `https://geek-text-team9.herokuapp.com/api/books/${address}`
       );
+
+        
 
       if (response.ok) {
         const data = await response.json();
@@ -40,13 +49,15 @@ class BookPage extends Component {
     this.setState({ loading: false });
   }
   render() {
+    var header = this.props.header;
     return (
+      
       <div>
         <BookHeader />
         <div className="bookpage">
           <div className="books-title">
             <h1> The Book Store </h1>
-            <h2>All Books</h2>
+            <h2> {header} </h2>
             <br />
           </div>
           <div class="pad">
