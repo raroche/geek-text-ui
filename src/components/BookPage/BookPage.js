@@ -20,9 +20,15 @@ class BookPage extends Component {
   }
   async fetchBooks() {
     var address = this.props.address;
+    let {
+      match: { params }
+    } = this.props;
+
+    if (params.pageNo != undefined) address = address + (params.pageNo-1)
+  
     
-    console.log({address});
     try {
+      
 
       const response = await fetch(
         `https://geek-text-team9.herokuapp.com/api/books/${address}`
@@ -50,6 +56,12 @@ class BookPage extends Component {
   }
   render() {
     var header = this.props.header;
+    var address = this.props.address;
+    let {
+      match: { params }
+    } = this.props;
+
+
     return (
       
       <div>
@@ -60,8 +72,8 @@ class BookPage extends Component {
             <h2> {header} </h2>
             <br />
           </div>
-          <div class="pad">
-            <BookSection data={this.state.books} />
+          <div className="pad">
+            <BookSection data={this.state.books} pageNo = {params.pageNo} url = {this.props.url}/>
             <br />
           </div>
         </div>

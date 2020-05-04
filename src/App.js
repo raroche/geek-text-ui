@@ -79,7 +79,7 @@ class App extends Component {
         <Route path="/myaccount" render={props => <MyAccount {...props} currentUser={this.state.userId} loggedInStatus={this.state.loggedInStatus} /> } />
         <Route path="/bookgrid" component={BooksGrid} />
         <Route path="/cart" component={Cart} />
-        <Route exact path="/books" render={props => <BookPage {...props} address= ''  header='All Books' /> } />
+        <Route exact path="/books" render={props => <BookPage {...props} address= 'paged/'  header='All Books' /> } />
         <Route path="/books/top" render={props => <BookPage {...props} address= 'top/'  header='Top Sellers' /> } />  
         <Route path="/books/Programming" render={props => <BookPage {...props} address= 'programming/'  header='Programming' /> } />
         <Route path="/books/Robotics" render={props => <BookPage {...props} address= 'robotics/'  header='Robotics' /> } />
@@ -91,6 +91,7 @@ class App extends Component {
         <Route path="/books/rating3" render={props => <BookPage {...props} address= 'rating3/'  header='Rating 3+' /> } />
         <Route path="/books/rating4" render={props => <BookPage {...props} address= 'rating4/'  header='Rating 4+' /> } />
         <Route path="/books/rating5" render={props => <BookPage {...props} address= 'rating5/'  header='Rating 5' /> } />
+        <Route path="/books/:pageNo" render={props => ( <BookPage {...props} address= 'paged/?pageNo='  header='All Books' url = '/books/'/> )} />
         <Route
           path="/wishlist"
           render={props => (
