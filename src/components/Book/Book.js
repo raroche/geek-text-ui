@@ -10,18 +10,18 @@ export default function Book(props) {
   let avgRating = calculateAvgRating(reviews, totalReviews);
 
   return (
-      <div class = "card">
-        <div class = "link">
+      <div className = "card">
+        <div className = "link">
           <NavLink exact to={"/book/" + props.book.id} > 
             <img src={props.book.img_url} width="100%" height="100%" />
           </NavLink>
         </div>
-        <div class = "title">
+        <div className = "title">
           <p > 
             {shortTitle (props.book.title)}    </p>
         </div>
           <p > 
-            <div class = "stars"> <ReviewStars totalReviews={totalReviews} avgRating={avgRating} /> </div>
+            <div className = "stars"> <ReviewStars totalReviews={totalReviews} avgRating={avgRating} /> </div>
             Price: ${props.book.price} <br/>
             Author: {props.book.author}
           </p>
