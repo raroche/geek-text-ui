@@ -10,7 +10,7 @@ const BookHeader = props => (
     <nav className="nav">
         <div className="content"> 
             <GenreButton/> 
-            <Link to="/books/top">Top Sellers</Link>
+            <Link to="/books/top/1">Top Sellers</Link>
             <RatingButton/>
             <SortButton/>
         </div>

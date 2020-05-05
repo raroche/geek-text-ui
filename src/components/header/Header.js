@@ -15,7 +15,7 @@ const Header = props => (
         <div className="navcontent"> 
             <Link to="/">GeekText</Link>
             <Link to="/">About</Link>
-            <Link to="/books/1">Books</Link>
+            <Link to="/books/all/1">Books</Link>
             <Link to="/">Summer Specials</Link>
             <Link to="/">Contact</Link>
         </div>
