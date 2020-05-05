@@ -65,9 +65,11 @@ class BookPage extends Component {
     } = this.props;
     var header = this.props.header;
     var url = this.props.url;
+    var address = url;
 
     if (params.genre != undefined) url = url + (params.genre) + '/';
     if (params.rating != undefined) url = url + (params.rating) + '/';
+    address = url;
     if (params.sorting != undefined) url = url + (params.sorting) + '/';
     if (params.sorting != undefined && params.dir != undefined) url = url + (params.dir) + '/';
     
@@ -75,7 +77,7 @@ class BookPage extends Component {
     return (
       
       <div>
-        <BookHeader url={url} pageNo = {params.pageNo}/>
+        <BookHeader address={address} pageNo = {params.pageNo}/>
         <div className="bookpage">
           <div className="books-title">
             <h1> The Book Store </h1>

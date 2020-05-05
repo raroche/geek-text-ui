@@ -19,7 +19,7 @@ class BookHeader extends Component {
                     <GenreButton/> 
                     <Link to="/books/top/1">Top Sellers</Link>
                     <RatingButton/>
-                    <SortButton url={this.props.url} pageNo = {this.props.pageNo}/>
+                    <SortButton address={this.props.address} pageNo = {this.props.pageNo}/>
                 </div>
                 
 
