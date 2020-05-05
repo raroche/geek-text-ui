@@ -26,6 +26,8 @@ class BookPage extends Component {
 
     if (params.genre != undefined) address = address + (params.genre);
     if (params.rating != undefined) address = address + (params.rating);
+    if (params.sorting != undefined) address = address + (this.props.sorting) + (params.sorting);
+    if (params.sorting != undefined && params.dir != undefined) address = address + (this.props.dir) + (params.dir);
     if (params.pageNo != undefined) address = address + (this.props.page) + (params.pageNo-1);
     
     
@@ -62,16 +64,18 @@ class BookPage extends Component {
       match: { params }
     } = this.props;
     var header = this.props.header;
-    var address = this.props.url+params.pageNo;
     var url = this.props.url;
 
     if (params.genre != undefined) url = url + (params.genre) + '/';
     if (params.rating != undefined) url = url + (params.rating) + '/';
+    if (params.sorting != undefined) url = url + (params.sorting) + '/';
+    if (params.sorting != undefined && params.dir != undefined) url = url + (params.dir) + '/';
+    
 
     return (
       
       <div>
-        <BookHeader address={address}/>
+        <BookHeader url={url} pageNo = {params.pageNo}/>
         <div className="bookpage">
           <div className="books-title">
             <h1> The Book Store </h1>
