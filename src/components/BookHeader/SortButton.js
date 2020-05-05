@@ -21,7 +21,7 @@ class SortButton extends Component {
         let dropdown;
 
         if (sortMenuOpen) {
-            dropdown = <SortDropDown />;
+            dropdown = <SortDropDown address={this.props.address} pageNo = {this.props.pageNo}/>;
         }
 
         return (

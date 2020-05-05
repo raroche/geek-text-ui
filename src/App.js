@@ -79,15 +79,22 @@ class App extends Component {
         <Route path="/myaccount" render={props => <MyAccount {...props} currentUser={this.state.userId} loggedInStatus={this.state.loggedInStatus} /> } />
         <Route path="/bookgrid" component={BooksGrid} />
         <Route path="/cart" component={Cart} />
-        {/*<Route exact path="/books" render={props => <BookPage {...props} address= 'paged/'  header='All Books' /> } />  */}
-        
-        <Route path="/books/all/:pageNo" render={props => ( <BookPage {...props} address= '/' page='?pageNo=' header='All Books' url = '/books/all/'/> )} />
-        <Route path="/books/top/:pageNo" render={props => <BookPage {...props} address= '/top/' page='?pageNo=' header='Top Sellers' url = '/books/top/' /> } />  
-        <Route path="/books/genre/:genre/:pageNo" render={props => <BookPage {...props} address= '/genre/?genre=' page='&&pageNo='  header='Genre' url = '/books/genre/' /> } /> 
+        {/* With pagination */}
+        <Route exact path="/books/all/:pageNo" render={props => ( <BookPage {...props} address= '/' page='?pageNo=' header='All Books' url = '/books/all/'/> )} />
+        <Route exact path="/books/top/:pageNo" render={props => <BookPage {...props} address= '/top/' page='?pageNo=' header='Top Sellers' url = '/books/top/' /> } />  
+        <Route exact path="/books/genre/:genre/:pageNo" render={props => <BookPage {...props} address= '/genre/?genre=' page='&&pageNo='  header='Genre' url = '/books/genre/' /> } /> 
+        <Route exact path="/books/rating/:rating/:pageNo" render={props => <BookPage {...props} address= '/rating/?rating=' page='&&pageNo='  header='Rating' url = '/books/rating/' /> } />  
+        {/* With Sorting */}
+        <Route exact path="/books/all/:sorting/:pageNo" render={props => ( <BookPage {...props} address= '/' sorting = '?sortBy=' page='&&pageNo=' header='All Books' url = '/books/all/'/> )} />
+        <Route exact path="/books/top/:sorting/:pageNo" render={props => <BookPage {...props} address= '/top/' sorting = '?sortBy=' page='&&pageNo=' header='Top Sellers' url = '/books/top/' /> } />  
+        <Route exact path="/books/genre/:genre/:sorting/:pageNo" render={props => <BookPage {...props} address= '/genre/?genre=' sorting = '&&sortBy=' page='&&pageNo='  header='Genre' url = '/books/genre/' /> } /> 
+        <Route exact path="/books/rating/:rating/:sorting/:pageNo" render={props => <BookPage {...props} address= '/rating/?rating=' sorting = '&&sortBy=' page='&&pageNo='  header='Rating' url = '/books/rating/' /> } />  
+        {/* With Sorting Ascending direction */}
+        <Route exact path="/books/all/:sorting/:dir/:pageNo" render={props => ( <BookPage {...props} address= '/' sorting = '?sortBy=' dir = '&&dir=' page='&&pageNo=' header='All Books' url = '/books/all/'/> )} />
+        <Route exact path="/books/top/:sorting/:dir/:pageNo" render={props => <BookPage {...props} address= '/top/' sorting = '?sortBy=' dir = '&&dir=' page='&&pageNo=' header='Top Sellers' url = '/books/top/' /> } />  
+        <Route exact path="/books/genre/:genre/:sorting/:dir/:pageNo" render={props => <BookPage {...props} address= '/genre/?genre=' sorting = '&&sortBy=' dir = '&&dir=' page='&&pageNo='  header='Genre' url = '/books/genre/' /> } /> 
+        <Route exact path="/books/rating/:rating/:sorting/:dir/:pageNo" render={props => <BookPage {...props} address= '/rating/?rating=' sorting = '&&sortBy=' dir = '&&dir=' page='&&pageNo='  header='Rating' url = '/books/rating/' /> } />  
 
-
-
-        <Route path="/books/rating/:rating/:pageNo" render={props => <BookPage {...props} address= '/rating/?rating=' page='&&pageNo='  header='Rating' url = '/books/rating/' /> } />  
         <Route
           path="/wishlist"
           render={props => (
