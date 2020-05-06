@@ -22,7 +22,7 @@ render() {
           {this.props.data.map(book => book.id != undefined ? <Book book={book} key={book.id}/>: undefined )}
         </div>
         <div className = "center1">
-        <Pagination total={total} pageNo = {this.props.pageNo} url = {this.props.url}/>
+        <Pagination total={this.props.total} pageNo = {this.props.pageNo} url = {this.props.url}/>
         </div>
         
     
