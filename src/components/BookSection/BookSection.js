@@ -14,16 +14,13 @@ class BookSection extends Component {
 }
 
 render() {
-  var total = 25;
   return (
     
     <div>
         <div className="scroll" >
           {this.props.data.map(book => book.id != undefined ? <Book book={book} key={book.id}/>: undefined )}
         </div>
-        <div className = "center1">
-        <Pagination total={this.props.total} pageNo = {this.props.pageNo} url = {this.props.url}/>
-        </div>
+          <Pagination total={this.props.total} pageNo = {this.props.pageNo} url = {this.props.url}/>
         
     
       <hr />

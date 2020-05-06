@@ -11,7 +11,8 @@ class BookPage extends Component {
       books: [],
       loading: false,
       error: null,
-      totalPages: 3
+      totalPages: 3,   //default value arbitrary
+      genre: ''   
     };
 
     this.fetchBooks = this.fetchBooks.bind(this);
@@ -44,6 +45,7 @@ class BookPage extends Component {
         })
         .then(data => {
           this.setState({ books: data });
+          this.setState({genre: data[0].genre.name});
         })
         .catch(error => console.error(error));
 
@@ -62,13 +64,15 @@ class BookPage extends Component {
       console.log("error!");
       console.error(error);
     }*/
-  
+    
+    
 
   async componentDidMount() {
     this.setState({ loading: true });
     this.fetchBooks();
     this.setState({ loading: false });
   }
+
   render() {
     let {
       match: { params }
@@ -77,8 +81,16 @@ class BookPage extends Component {
     var url = this.props.url;
     var address = url;
 
-    if (params.genre != undefined) url = url + (params.genre) + '/';
-    if (params.rating != undefined) url = url + (params.rating) + '/';
+    if (params.genre != undefined) 
+    {
+      url = url + (params.genre) + '/';
+      header = this.state.genre;
+    }
+    
+    if (params.rating != undefined) {
+      url = url + (params.rating) + '/'; 
+      header = params.rating == 5 ? header + ' ' + params.rating : header + ' ' + params.rating + '+'
+    }
     address = url;
     if (params.sorting != undefined) url = url + (params.sorting) + '/';
     if (params.sorting != undefined && params.dir != undefined) url = url + (params.dir) + '/';
@@ -102,6 +114,11 @@ class BookPage extends Component {
       </div>
     );
   }
+}
+function genreHeader(genre) {
+  var header = "";
+  if (genre === 1) header = "Programming";
+  return 5;
 }
 
 export default BookPage;
