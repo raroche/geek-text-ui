@@ -20,7 +20,9 @@ render() {
         <div className="scroll" >
           {this.props.data.map(book => this.props.data ? <Book book={book} key={book.id}/>: undefined )}
         </div>
+        <div>
           <Pagination total={this.props.total} pageNo = {this.props.pageNo} url = {this.props.url}/>
+        </div>
         
     
       <hr />
