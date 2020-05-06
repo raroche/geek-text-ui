@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import BookGrid from "../BooksGrid/BooksGrid";
+import BooksGrid from "../BooksGrid/BooksGrid";
 import "./HomePage.css";
 import MainBanner from "../MainBanner/MainBanner";
+import BookSection from "../BookSection/BookSection";
+
 
 class HomePage extends Component {
   constructor(props) {
@@ -52,7 +54,7 @@ class HomePage extends Component {
             <h2>Featured Books</h2>
             <br />
           </div>
-          <BookGrid data={this.state.books} />
+          <BooksGrid data={this.state.books} />
           <br />
         </div>
       </div>
