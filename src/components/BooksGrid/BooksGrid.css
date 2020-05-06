@@ -1,0 +1,10 @@
+.featured {
+    width: 81.5%;
+    position: relative;
+    padding: 15px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start; 
+    margin: 0 auto;
+    vertical-align: top;
+}

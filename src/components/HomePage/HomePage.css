@@ -1,12 +1,12 @@
 .homepage {
     z-index: 0;
-    padding: 50px;
+    padding: 0px;
     position: relative;
 }
 
 .home-title {
-    padding: 10px;
-    width: 80%;
+    padding-top: 30px;
+    width: 100%;
     justify-items: center;
     align-items: center;
     text-align: center;
