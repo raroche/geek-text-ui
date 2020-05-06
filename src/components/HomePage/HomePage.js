@@ -10,7 +10,7 @@ class HomePage extends Component {
     this.state = {
       books: [],
       loading: false,
-      error: null
+      error: null,
     };
 
     // Binding methods to class
@@ -50,7 +50,6 @@ class HomePage extends Component {
         <div className="homepage">
           <div className="home-title">
             <h2>Featured Books</h2>
-            <br />
           </div>
           <BookGrid data={this.state.books} />
           <br />

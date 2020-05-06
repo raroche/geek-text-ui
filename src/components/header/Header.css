@@ -1,17 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&display=swap");
 .navigation {
   width: 100%;
-  background-color: #eee;
-  top: 0;
-  left: 0;
-  height: 100px;
+  background-color: rgb(20, 32, 52);
+  height: 125px;
+  padding: 20px;
   display: flex;
   z-index: 200;
   align-items: center;
+  position: relative;
+  padding-top: 30px;
+}
+.app-title {
+  position: relative;
+  display: flex;
+  width: 50%;
+}
+
+.geek-text-title {
+  font-family: "B612 Mono", monospace;
+  color: rgb(249, 234, 221);
+  font-size: 50px;
+  position: relative;
+  margin-left: 30px;
+}
+
+.geek-text-title:hover {
+  text-decoration: none;
+  border: none;
 }
 
 .navcontent {
   position: relative;
-  width: 800%;
+  width: 200%;
   padding: 0px;
   display: flex;
   float: right;
@@ -19,22 +39,23 @@
   justify-content: flex-end;
   justify-content: space-around;
   margin: 0 auto;
+  /* border: solid; */
+  color: white;
+  /* padding-bottom: 5px; */
 }
 
 .navcontent a {
-  bottom: 0;
   border-bottom: 0px;
   position: relative;
-  padding: 40px 0px 0px 0px;
-  color: rgb(80, 80, 80);
+  padding: 20px 0px 0px 0px;
+  color: rgb(249, 234, 221);
   text-decoration: none;
   position: relative;
   display: flex;
-  font-size: 20px;
+  font-size: 22px;
   z-index: 400;
   justify-content: flex-end;
-  float: right;
-  margin: 0 auto;
+  /* margin: 0px 0px 10px 0px; */
 }
 
 .navcontent a:hover {
@@ -44,10 +65,11 @@
 
 .usercontent {
   display: flex;
-  justify-content: flex-end;
-  float: right;
+  justify-content: space-around;
   margin: 0 auto;
-  width: 100%;
+  width: 40%;
+  /* border: solid; */
+  color: white;
 }
 
 @media (max-width: 1000px) {

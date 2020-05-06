@@ -1,6 +1,10 @@
 .footer {
-  flex-shrink: 0;
   text-align: center;
-  background-color: #1c2022;
-  color: white;
+  background-color: rgb(22, 35, 56);
+  color: rgb(250, 240, 231);
+  position: relative;
+  margin-bottom: 0px;
+}
+.footer p {
+  font-size: 14px;
 }

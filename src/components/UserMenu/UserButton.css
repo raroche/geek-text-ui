@@ -1,19 +1,19 @@
 .UserButton {
-    background-color: transparent;
-    color: rgb(80, 80, 80);
-    padding: 40px 10px 0px 30px;
-    font-size: 20px;
-    border: none;
-    right: 0;
-    position: relative;
-    outline: none;
+  background-color: transparent;
+  color: rgba(249, 234, 221, 0.666);
+  padding: 30px 0px 0px 0px;
+  font-size: 20px;
+  border: none;
+  right: 0;
+  position: relative;
+  outline: none;
 }
 
 .UserButton:active {
-    outline: none;
-    border: none;
+  outline: none;
+  border: none;
 }
-  
+
 .UserButton:focus {
-    outline: none;
+  outline: none;
 }
