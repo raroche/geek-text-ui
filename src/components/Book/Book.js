@@ -13,7 +13,7 @@ export default function Book(props) {
       <div className = "card">
         <div className = "link">
           <NavLink exact to={"/book/" + props.book.id} > 
-            <img src={props.book.img_url} width="100%" height="100%" />
+            <img src={props.book.img_url} width="200px" height = "250px" />
           </NavLink>
         </div>
         <div className = "title">
