@@ -99,26 +99,38 @@ class Pagination extends React.Component {
     render() {
         //var pager = this.state.pager;
         var page = parseInt(this.props.pageNo);
-        var totalPages = Math.ceil(this.props.total / 10);
+
 
         return (
             <ul className="pagination">
                 <li className={page === 1 ? 'disabled' : ''}>
-                    <a href={`${this.props.url}1`}>First</a>
+                    {page === 1
+                    ? <a>First</a>
+                    : <a href={`${this.props.url}1`}>First</a>
+                    }   
                 </li>
                 <li className={page === 1 ? 'disabled' : ''}>
-                    <a href={`${this.props.url}${page-1}`}>Previous</a>
+                    {page === 1
+                    ? <a>Previous</a>
+                    : <a href={`${this.props.url}${page-1}`}>Previous</a>
+                    }
                 </li>
                 
                 <li className={page === page ? 'active' : ''}>
                     <a> {this.props.pageNo}</a>
                 </li>
                 
-                <li className={page === this.props.total ? 'disabled' : ''}>
-                    <a href={`${this.props.url}${page+1}`}> Next</a>
+                <li className={page === this.props.total? 'disabled' : ''}>
+                    {page === this.props.total
+                    ? <a>Next</a>
+                    : <a href={`${this.props.url}${page+1}`}>Next</a>
+                    }
                 </li>
                 <li className={page === this.props.total ? 'disabled' : ''}>
-                    <a href={`${this.props.url}${totalPages}`}>Last</a>
+                    {page === this.props.total
+                    ? <a>Last</a>
+                    : <a href={`${this.props.url}${this.props.total}`}>Last</a>
+                    }
                 </li>
             </ul>
         );

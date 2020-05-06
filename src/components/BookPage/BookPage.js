@@ -10,7 +10,8 @@ class BookPage extends Component {
     this.state = {
       books: [],
       loading: false,
-      error: null
+      error: null,
+      totalPages: 3
     };
 
     this.fetchBooks = this.fetchBooks.bind(this);
@@ -32,17 +33,26 @@ class BookPage extends Component {
     
     
     
-    try {
+    
       
 
-      const response = await fetch(
-        `https://geek-text-team9.herokuapp.com/api/books${address}`
-      );
+      fetch(`https://geek-text-team9.herokuapp.com/api/books${address}`)
+        .then(response => {
+          var total = parseInt(response.headers.get('Total-Pages'));
+          this.setState({ totalPages: total });
+        return response.json();
+        })
+        .then(data => {
+          this.setState({ books: data });
+        })
+        .catch(error => console.error(error));
 
-        
+      }
 
-      if (response.ok) {
+      /*if (response.ok) {
         const data = await response.json();
+        const totalPages = response.headers.get('Totalpages');
+        console.log(totalPages );
         this.setState({ books: data });
       } else {
         throw new Error("Something went wrong while fetching the data");
@@ -51,8 +61,8 @@ class BookPage extends Component {
       this.setState({ error, isLoading: false });
       console.log("error!");
       console.error(error);
-    }
-  }
+    }*/
+  
 
   async componentDidMount() {
     this.setState({ loading: true });
@@ -72,9 +82,9 @@ class BookPage extends Component {
     address = url;
     if (params.sorting != undefined) url = url + (params.sorting) + '/';
     if (params.sorting != undefined && params.dir != undefined) url = url + (params.dir) + '/';
-    
 
     return (
+      
       
       <div>
         <BookHeader address={address} pageNo = {params.pageNo}/>
@@ -85,7 +95,7 @@ class BookPage extends Component {
             <br />
           </div>
           <div className="pad">
-            <BookSection data={this.state.books} pageNo = {params.pageNo} url = {url}/>
+            <BookSection data={this.state.books} pageNo = {params.pageNo} url = {url} total = {this.state.totalPages}/>
             <br />
           </div>
         </div>
