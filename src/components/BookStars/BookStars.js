@@ -6,7 +6,8 @@ export default function ReviewStars(props) {
   let rating = Math.round(props.avgRating * 10) / 10;
 
   var style = {
-    verticalAlign: "middle"
+    verticalAlign: "middle",
+    fontSize: "15px"
   };
 
   var starStyle = {
