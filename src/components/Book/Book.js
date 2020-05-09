@@ -21,7 +21,7 @@ export default function Book(props) {
             {shortTitle (props.book.title)}    </p>
         </div>
           <p > 
-            <div className = "stars"> <ReviewStars totalReviews={totalReviews} avgRating={avgRating} /> </div>
+             <ReviewStars totalReviews={totalReviews} avgRating={avgRating} /> <br/>
             Price: ${props.book.price} <br/>
             Author: {props.book.author}
           </p>
